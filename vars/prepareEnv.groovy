@@ -1,5 +1,5 @@
 def verify_parametr(parameters, param){
-    if (!parameters.containsKey(name)){
+    if (!parameters.containsKey(param)){
         throw new Exception("Missing parameter: ${param}")
     }
 }
@@ -24,7 +24,7 @@ def call(Map parameters = [:]){
     verify_parametr(parameters, 'action')
     switch(parameters.action){
         case 'get':
-            get(script, parameters)
+            get(parameters.script, parameters)
             break
         default:
             // unsupported action
