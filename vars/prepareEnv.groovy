@@ -8,10 +8,10 @@ def get(script, parameters){
     verify_parametr(parameters, 'job_parameter')
     switch(parameters.job_parameter){
         case 'git_committer':
-            def changeLogSets = script.currentBuild.changeSets
-            def commitAuthor ="" 
-            def commitMsg    =""
             echo 'committer'
+            echo env.CHANGE_ID
+            echo env.CHANGE_AUTHOR
+            echo '--------------'
             break
         default:
             // unsupported parameter
